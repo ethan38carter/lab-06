@@ -138,12 +138,16 @@ ggplot(candy_df, aes(x = winpercent, fill = caramel)) +
 Create a visualization that examines the relationship between a candy’s win percentage and whether it contains chocolate. Include x and y labels and a title. Describe any relationship you see.
 
 ```{r}
-# your code here
+ggplot(data = candy_df, mapping = aes(x = winpercent, y = chocolate)) +
+  geom_boxplot() +
+  labs(x = "Win Percentage", y = "Contains Chocolate", title = "Distribution of win percentage of candies depending on containing chocolate")
 
 ```
 
 - Consider the similar pair by replacing chocolate with caramel, fruity and compare their results. 
 - Also include summary statistics details for this discussion by using the calculation below: 
+
+The median win percentage is  significantly higher for candies with chocolate than those without it - chocolate is a good predicter of win percentage.
 
 ```{r}
 candy_rankings %>%
@@ -161,10 +165,12 @@ candy_rankings %>%
 Do more expensive candies win more often? Make a scatterplot of pricepercent (x) against winpercent (y). Describe their relationship.  
 
 ```{r}
-# your code here
+ggplot(data = candy_df, mapping = aes(x = pricepercent, y = winpercent, colour = chocolate)) +
+  geom_point() +
+  facet_wrap(~bar)
 
 ```
-
+There is a weak positive correlation between price and win percent.
 
 - Add `color = chocolate` to add a third variable to the created visualization
 - How to facet this by using another categorical variable such as `bar`? 
@@ -175,17 +181,19 @@ Do more expensive candies win more often? Make a scatterplot of pricepercent (x)
 Are chocolate candies more likely to be candy bars? Make a filled bar plot with chocolate on the x-axis and fill = bar. Describe what you see.
 
 ```{r}
-# Your code here
+ggplot(data = candy_df, mapping = aes(x = chocolate, fill = bar)) +
+  geom_bar(position = "fill")
 
 ```
-
+chocolate candies are significantly more likely to be candy bars.
 
 ## Exercise 8
 Create a new variable called price per sugar ratio as the division of pricepercent and sugarpercent. Plot it against winpercent, and set the color of all points to blue for the competitors who are not "One dime" or "One quarter". Include x and y labels and a title. Describe any relationship you see.
 
 ```{r}
-# your code here
-
+candy_df <- candy_df %>% mutate(price_per_sugar = pricepercent/sugarpercent)
+ggplot(data = candy_df, mapping = aes(x = sugarpercent, y = winpercent)) +
+  geom_point()
 ```
 
 
