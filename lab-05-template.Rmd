@@ -83,7 +83,7 @@ glimpse(candy_df)
 How many observations and variables are in this dataset?
 Did you identify the type of variables, remember that this detail is crucial to create which kind of data visualization in general. 
 
-_Write your comments about results_
+13 variables, 1105 observations, competitorname is categorical and nominal - character, sugarpercent, pricepercent, winpercent are continuous - double, the other variables are logical.
 
 # Data viz - One variable at a time
 
@@ -99,8 +99,8 @@ candy_df <- candy_df %>%
 Complete the following code to get the data viz to represent "how many candies contain caramel via bar plot". Fill in the blanks, remove the # symbol in front of your code and the execute the code chunk via green play button.
 
 ```{r}
-# ggplot(candy_rankings, aes(x = ______)) +
-#  _____() +
+ ggplot(candy_rankings, aes(x = caramel)) +
+geom_bar() 
 ```
 
 ## Exercise 3
@@ -108,7 +108,9 @@ Complete the following code to get the data viz to represent "how many candies c
 Now look at a numerical variable, such as `winpercent`. Create an histogram for this variable using ggplot2 functions below. Include informative x and y labels and a title, as a good practice.
 
 ```{r}
-# Your code here
+ggplot(data = candy_df, mapping = aes(x = winpercent))+
+  geom_histogram(bins = 15) +
+ labs(x = "Win Percentage", y = "Frequency", title = "Frequency distribution of Win Percentage of candies")
 
 ```
 
@@ -122,10 +124,9 @@ How about using the both variables; chocolate vs winpercent? Run the following i
 Fill in the blanks, remove the # symbol in front of your code and the execute the code chunk via green play button.
 
 ```{r}
-# Your code here
-#ggplot(candy_df, aes(x = ___________)) +
-#  geom_histogram() +
-#  facet_wrap(___________)
+ggplot(candy_df, aes(x = winpercent, fill = caramel)) +
+  geom_histogram(bins = 15) +
+ facet_wrap(~ chocolate)
 
 ```
 
