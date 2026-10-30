@@ -21,7 +21,7 @@ library(ggplot2)
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
 
-_Write your comments about image 1 below_
+The bars have different widths so it is unclear whether number of speakers is represented by length or area of the bars. The lengths of the bars are significantly out of proportion - there is a very small proportional difference between English and Spanish when the data shows English has over 50% more speakers.
 
 
 
@@ -32,7 +32,7 @@ _Write your comments about image 1 below_
 knitr::include_graphics("img/rose-pop-density-total-area-bw.jpg")
 ```
 
-_Write your comments about image 2 below_
+A pie chart is ineffective because it is difficult to compare the sizes of similar sector sizes. This is compounded by the radius of different sectors being different, which can be misleading as it increases the area of some slices, so gives the impression some countries have larger areas. It is also unclear whether darker or lighter represents high population density without a legend.
 
 
 
@@ -43,7 +43,7 @@ _Write your comments about image 2 below_
 knitr::include_graphics("img/life-expectancy-rule-of-law.png")
 ```
 
-_Write your comments about image 3 below_
+It is difficult to distinguish between individual countries because the bubbles are large - a scatter plot may be better if we are willing to abandon visualising the countries. It is also unclear why some bubbles are bigger than others so it serves to minimise the visual impact of these countries. there is no scale on either axis.
 
 
 
@@ -54,7 +54,7 @@ _Write your comments about image 3 below_
 knitr::include_graphics("img/global-income-dist.PNG")
 ```
 
-_Write your comments about image 4 below_
+When the regions are stacked as in this image, it is difficult to compare the areas and the heights  with each other since the regions towards the top of the graph take on very warped shapes. The purple area includes vastly different regions as one group.
 
 
 
